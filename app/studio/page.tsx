@@ -1,2 +1,18 @@
 import { SiteHeader, SiteFooter, WhatsAppFloat, quoteUrl } from "../components/SiteChrome";
-export default function Studio(){return <main><SiteHeader /><section className="page-hero studio-hero"><p className="section-tag light-tag">Vantage Interiors</p><h1>Design with clarity.<br /><em>Made with care.</em></h1></section><section className="studio-story"><div><img src="/media/home-office.png" alt="Bespoke home office by Vantage Interiors" /></div><article><p className="section-tag">The studio</p><h2>Interiors should look beautiful—and work beautifully.</h2><p>Our work begins with how a space is used. From there, we refine proportion, storage, material, lighting and detail until everything feels considered and connected.</p><p>We bring the same attention to an individual wardrobe, a complete room or a full interior. The result is personal, practical and built to last.</p><a className="button brown-button" href={quoteUrl} target="_blank" rel="noreferrer">Work with us <span>↗</span></a></article></section><section className="values"><article><span>01</span><h3>Personal</h3><p>Every solution begins with your routines, priorities and point of view.</p></article><article><span>02</span><h3>Purposeful</h3><p>Beauty and function are resolved together, never treated as separate ideas.</p></article><article><span>03</span><h3>Precise</h3><p>Proportion, material and finishing are considered down to the smallest detail.</p></article></section><SiteFooter /><WhatsAppFloat /></main>}
+
+const gallery = [
+  { image: "/media/wardrobe.png", title: "Dressing Room", category: "Wardrobes & storage", note: "Warm timber, integrated lighting and carefully planned display space." },
+  { image: "/media/home-office.png", title: "Home Office", category: "Workspace", note: "A practical, composed workspace fitted seamlessly into the room." },
+  { image: "/media/vanity.png", title: "Vanity Suite", category: "Dressing area", note: "Soft colour and focused lighting for a calm daily ritual." },
+  { image: "/media/shoe-cabinet.png", title: "Collection Cabinet", category: "Display joinery", note: "Glass, rich wood and warm illumination frame a personal collection." },
+  { image: "/media/wardrobe-detail.png", title: "Wardrobe Details", category: "Interior fittings", note: "Every rail, drawer and fitting placed to make storage effortless." },
+  { image: "/media/study.jpg", title: "Executive Study", category: "Commercial interiors", note: "A confident workspace layered with stone, wood and ambient light." },
+];
+
+export default function Gallery(){return <main><SiteHeader />
+  <section className="page-hero gallery-hero"><p className="section-tag light-tag">The gallery</p><h1>Details worth<br /><em>looking closer.</em></h1><p>Explore finished spaces, thoughtful storage and bespoke details created by Vantage Interiors.</p></section>
+  <section className="gallery-intro"><p className="section-tag">Selected spaces</p><h2>A growing collection<br />of <em>our work.</em></h2><p>Every entry follows the same considered format, keeping new projects organized as the gallery grows.</p></section>
+  <section className="gallery-grid">{gallery.map((item,i)=><article key={item.title} className={i % 3 === 1 ? "gallery-card gallery-card-tall" : "gallery-card"}><div className="gallery-image"><img src={item.image} alt={item.title} /><span>0{i+1}</span></div><div className="gallery-caption"><p>{item.category}</p><h2>{item.title}</h2><span>{item.note}</span></div></article>)}</section>
+  <section className="quote-band dark-quote"><p className="section-tag light-tag">Inspired?</p><h2>Let’s shape your<br /><em>next space.</em></h2><a className="button cream-button" href={quoteUrl} target="_blank" rel="noreferrer">Request a quote <span>↗</span></a></section>
+  <SiteFooter /><WhatsAppFloat />
+</main>}
