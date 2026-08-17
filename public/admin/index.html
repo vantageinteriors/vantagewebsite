@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Vantage Interiors — Gallery Admin</title>
+  <style>
+    html,body{margin:0;background:#21110c}#cms-loading{min-height:100vh;display:grid;place-items:center;color:#eee4d2;font:14px system-ui;letter-spacing:.08em}
+  </style>
+</head>
+<body>
+  <div id="cms-loading">Loading Vantage Gallery Manager…</div>
+  <script>window.CMS_MANUAL_INIT = true;</script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    document.getElementById("cms-loading").remove();
+    CMS.init({config:{
+      backend:{
+        name:"github",
+        repo:"vantageinteriors/vantagewebsite",
+        branch:"main",
+        base_url:window.location.origin,
+        auth_endpoint:"api/auth"
+      },
+      site_url:window.location.origin,
+      display_url:window.location.origin + "/studio",
+      media_folder:"public/uploads",
+      public_folder:"/uploads",
+      publish_mode:"simple",
+      slug:{encoding:"ascii",clean_accents:true,sanitize_replacement:"-"},
+      collections:[{
+        name:"gallery",
+        label:"Gallery",
+        label_singular:"Gallery item",
+        folder:"content/gallery",
+        create:true,
+        delete:true,
+        extension:"json",
+        format:"json",
+        identifier_field:"title",
+        summary:"{{order}} — {{title}} · {{category}}",
+        sortable_fields:["order","title","category"],
+        fields:[
+          {label:"Project title",name:"title",widget:"string",hint:"Example: Warm Walnut Kitchen"},
+          {label:"Category",name:"category",widget:"string",hint:"Example: Kitchen & joinery"},
+          {label:"Caption",name:"note",widget:"text",hint:"One short sentence describing the space."},
+          {label:"Project image",name:"image",widget:"image",choose_url:false,media_library:{config:{multiple:false}}},
+          {label:"Display order",name:"order",widget:"number",value_type:"int",min:1,default:10,hint:"Lower numbers appear first."},
+          {label:"Featured",name:"featured",widget:"boolean",default:false,required:false}
+        ]
+      }]
+    }});
+  </script>
+</body>
+</html>
