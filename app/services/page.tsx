@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, WhatsAppFloat, quoteUrl } from "../components/SiteChrome";
+
+export const metadata: Metadata = {
+  title: "Interior Design Services in Uganda",
+  description: "Interior design, bespoke joinery, custom kitchens, wardrobes, furniture, styling and project coordination by Vantage Interiors & Construction.",
+  alternates: { canonical: "/services" },
+};
 const services=[
   ["01","Interior design","A complete design direction for homes and commercial spaces—from planning and materials to the final atmosphere."],
   ["02","Bespoke joinery","Wardrobes, kitchens, vanities, media units and fitted furniture measured and made for your exact space."],

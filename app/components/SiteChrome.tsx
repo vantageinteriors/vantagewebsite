@@ -17,8 +17,8 @@ export function SiteHeader() {
   return <header className="site-header">
     <Link className="logo" href="/" aria-label="Vantage Interiors home"><img src="/media/logo-transparent.png" alt="Vantage Interiors" /></Link>
     <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation"><i /><i /></button>
-    <nav className={open ? "nav-open" : ""} onClick={() => setOpen(false)}>
-      <Link href="/projects">Projects</Link><Link href="/services">Services</Link><Link href="/studio">Gallery</Link><Link href="/contact">Contact</Link>
+    <nav className={open ? "nav-open" : ""}>
+      <Link href="/projects" onClick={() => setOpen(false)}>Projects</Link><Link href="/services" onClick={() => setOpen(false)}>Services</Link><Link href="/studio" onClick={() => setOpen(false)}>Gallery</Link><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
       <a className="outline-cta" href={quoteUrl} target="_blank" rel="noreferrer">Request a quote <span>↗</span></a>
     </nav>
   </header>;
@@ -28,7 +28,7 @@ export function SiteFooter() {
   return <footer className="site-footer">
     <Link className="footer-logo" href="/"><img src="/media/logo-transparent.png" alt="Vantage Interiors" /></Link>
     <div className="footer-links"><Link href="/projects">Projects</Link><Link href="/services">Services</Link><Link href="/studio">Gallery</Link><Link href="/contact">Contact</Link></div>
-    <div className="footer-social"><a href={callUrl}><FaPhone /> <span>+256 748 781751</span></a><a href={emailUrl}><FaEnvelope /> <span>Email</span></a><a href="https://www.instagram.com/vantage_nteriors.ug?igsh=OTFudWgzeGg5eXFp" target="_blank" rel="noreferrer"><FaInstagram /> <span>Instagram</span></a><a href="https://www.tiktok.com/@vantage_interiors?_r=1&_t=ZS-98y2HwHua0r" target="_blank" rel="noreferrer"><FaTiktok /> <span>TikTok</span></a></div>
+    <div className="footer-social"><a href={callUrl}><FaPhone /> <span>+256 748 781751</span></a><a href={emailUrl}><FaEnvelope /> <span>Email</span></a><a href="https://www.instagram.com/vantage_nteriors.ug/" target="_blank" rel="noopener noreferrer"><FaInstagram /> <span>Instagram</span></a><a href="https://www.tiktok.com/@vantage_interiors?_r=1&_t=ZS-98y2HwHua0r" target="_blank" rel="noreferrer"><FaTiktok /> <span>TikTok</span></a></div>
     <p>© 2026 Vantage Interiors</p>
   </footer>;
 }

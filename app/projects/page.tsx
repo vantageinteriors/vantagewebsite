@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, WhatsAppFloat, quoteUrl } from "../components/SiteChrome";
+
+export const metadata: Metadata = {
+  title: "Interior Design Projects",
+  description: "Explore residential and commercial interiors, dressing rooms, home offices, custom wardrobes and cabinetry by Vantage Interiors & Construction.",
+  alternates: { canonical: "/projects" },
+};
 const work = [
   ["/media/wardrobe.png", "Dressing Room", "Custom wardrobes, display shelving and integrated lighting."],
   ["/media/home-office.png", "Home Office", "A warm, practical workspace built into the room."],

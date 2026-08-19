@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { SiteHeader, SiteFooter, WhatsAppFloat, quoteUrl } from "../components/SiteChrome";
 import { getGalleryEntries } from "../lib/gallery";
+
+export const metadata: Metadata = {
+  title: "Interior Design Gallery",
+  description: "View the latest finished interiors, fitted storage, custom furniture and bespoke details from Vantage Interiors & Construction.",
+  alternates: { canonical: "/studio" },
+};
 
 export default function Gallery(){const gallery=getGalleryEntries();return <main><SiteHeader />
   <section className="page-hero gallery-hero"><p className="section-tag light-tag">The gallery</p><h1>Details worth<br /><em>looking closer.</em></h1><p>Explore finished spaces, thoughtful storage and bespoke details created by Vantage Interiors.</p></section>
