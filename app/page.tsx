@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteHeader, SiteFooter, WhatsAppFloat, quoteUrl } from "./components/SiteChrome";
+import { BackgroundVideo } from "./components/BackgroundVideo";
 
 const projects = [
   { image: "/media/wardrobe.png", title: "Dressing Room", type: "Wardrobes & storage" },
@@ -10,13 +11,13 @@ const projects = [
 export default function Home() {
   return <main><SiteHeader />
     <section className="hero">
-      <div className="hero-image"><video autoPlay muted loop playsInline poster="/media/wardrobe.png"><source src="/media/process.mp4" type="video/mp4" /></video></div><div className="hero-shade" />
+      <div className="hero-image"><BackgroundVideo src="/media/process.mp4" poster="/media/wardrobe.png" /></div><div className="hero-shade" />
       <div className="hero-copy"><h1>Spaces with<br /><em>presence.</em></h1><p className="hero-intro">Thoughtful interiors, beautifully made—from the first line drawn to the final detail placed.</p><div className="hero-actions"><a className="button hero-outline-button" href={quoteUrl} target="_blank" rel="noreferrer">Request a quote <span>↗</span></a><Link className="hero-link" href="/projects">View our work <span>↓</span></Link></div></div>
     </section>
 
     <section className="video-feature image-feature"><img src="/media/wardrobe.png" alt="Custom dressing room by Vantage Interiors" /><div className="video-overlay"><p>Designed for living</p><h2>See the detail.<br /><em>Feel the difference.</em></h2><Link href="/projects">Explore projects ↗</Link></div></section>
 
-    <section className="video-feature warm-video-feature"><video autoPlay muted loop playsInline poster="/media/study.jpg"><source src="/media/services-hero.mp4" type="video/mp4" /></video><div className="video-overlay"><p>Craft in motion</p><h2>Form, function<br /><em>and feeling.</em></h2><Link href="/services">Explore our services ↗</Link></div></section>
+    <section className="video-feature warm-video-feature"><BackgroundVideo src="/media/services-hero.mp4" poster="/media/study.jpg" /><div className="video-overlay"><p>Craft in motion</p><h2>Form, function<br /><em>and feeling.</em></h2><Link href="/services">Explore our services ↗</Link></div></section>
 
     <section className="intro"><p className="section-tag">Our approach</p><h2>We shape rooms around <em>your life,</em> then make every detail feel inevitable.</h2><div className="intro-grid"><p>Vantage Interiors creates refined residential and commercial spaces with a warm, modern point of view. Every project balances beauty, function and enduring craftsmanship.</p><Link className="text-link" href="/studio">Discover our studio <span>↗</span></Link></div></section>
 
